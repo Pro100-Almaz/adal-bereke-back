@@ -63,7 +63,7 @@ class UserProfileView(generics.RetrieveUpdateAPIView):
 
 @extend_schema(responses=USER_CREATE_RESPONSE_SCHEMA)
 class CreateUserView(generics.CreateAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.AllowAny,)
     serializer_class = CreateUserSerializer
     throttle_classes = [throttling.UserRateThrottle]
 
